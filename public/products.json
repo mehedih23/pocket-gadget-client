@@ -1,0 +1,128 @@
+[
+    {
+        "name": "iphone-13 pro",
+        "price": "$1,163.29",
+        "image": "https://i.ibb.co/H7z5PKD/iphone-13-pro.jpg",
+        "company": "Apple",
+        "quantity": 7,
+        "email": "nmehedi23@gmail.com",
+        "description": "Apple's iPhone 13 features a ceramic shield front, Super Retina XDR display with True Tone and an A15 Bionic chip. The first design change users will notice is the smaller notch. After years of using the same-sized notch to house the Face ID components, Apple has finally reduced its size by 20%."
+    },
+    {
+        "name": "Apple Watch-s7",
+        "price": "$676.05",
+        "image": "https://i.ibb.co/PzWqtLJ/Untitled-design-1.png",
+        "company": "Apple",
+        "quantity": 8,
+        "email": "nmehedi23@gmail.com",
+        "description": "Apple Watch Series 7 is the most durable Apple Watch ever, with a stronger, more crack-resistant front crystal. It is the first Apple Watch to have an IP6X certification for resistance to dust, and maintains a WR50 water resistance rating."
+    },
+    {
+        "name": "iPhone SE",
+        "price": "$642.37",
+        "image": "https://i.ibb.co/r0L57Ym/Untitled-design-2.png",
+        "company": "Apple",
+        "quantity": 7,
+        "email": "nmehedi23@gmail.com",
+        "description": "The iPhone SE is Apple's entry-level iPhone, starting at $429. The device offers an affordable entry point to the iPhone lineup, with many important features such as a powerful A-series chip, a high-quality camera with 4K video recording, Haptic Touch, wireless charging, water and dust resistance, and more."
+    },
+    {
+        "name": "Macbook Air",
+        "price": "$1,077.83",
+        "image": "https://i.ibb.co/9rGjZ7Q/Untitled-design-3.png",
+        "company": "Apple",
+        "quantity": 11,
+        "email": "nmehedi23@gmail.com",
+        "description": "You can now get quad-core processors and up to 16GB of RAM without too much of a price hike or losing that thin design that makes the Air so special. With those upgrades to the CPU, RAM, and storage, the MacBook Air (2020) just offers that much more computer than previous models. Apple Air fans will appreciate it."
+    },
+    {
+        "name": "Apple Watch SE",
+        "price": "$760.94",
+        "image": "https://i.ibb.co/xjGGsSh/Untitled-design-4.png",
+        "company": "Apple",
+        "quantity": 2,
+        "email": "nmehedi23@gmail.com",
+        "description": "Apple Watch SE features the same accelerometer, gyroscope, and always-on altimeter as Apple Watch Series 6, and with the latest motion sensors and microphone, it offers robust health and safety capabilities including fall detection, Emergency SOS, international emergency calling, and the Noise app."
+    },
+    {
+        "name": "iPhone 11",
+        "price": "$691.00",
+        "image": "https://i.ibb.co/MNsGYZ3/Untitled-design-5.png",
+        "company": "Apple",
+        "quantity": 5,
+        "email": "nmehedi23@gmail.com",
+        "description": "Like the iPhone XR was to the iPhone XS, the iPhone 11 has nearly every meaningful feature the iPhone 11 Pros have: the most powerful performance in any smartphone, a new ultra wide camera, night mode for better low-light photography, longer battery life than the previous generation, and all of the new features in iOS .."
+    },
+    {
+        "name": "iPad Mini",
+        "price": "$775.49",
+        "image": "https://i.ibb.co/wQqK8RY/Untitled-design-6.png",
+        "company": "Apple",
+        "quantity": 2,
+        "email": "nmehedi23@gmail.com",
+        "description": "It's been redesigned to look like Apple's premium iPad Pro line, with the same A15 chipset that powers the iPhone 13 Pro, double the storage of its predecessor, a slightly larger display, second-generation Apple Pencil support, and the option for sub-6GHz 5G connectivity."
+    },
+    {
+        "name": "Macbook Pro",
+        "price": "$1,108.34",
+        "image": "https://i.ibb.co/DK9YK19/Untitled-design-7.png",
+        "company": "Apple",
+        "quantity": 2,
+        "email": "nmehedi23@gmail.com",
+        "description": "The Mac has an App that is called Messages and one of the accounts in it is the iMessages one that can sync with the iOS one. In the Preferences select the Accounts tab. Select the iMessages account if it is not selected. Untick the iPhone Number to stop iMessages sent to your iPhone Number appearing on your Mac"
+    },
+    {
+        "name": "iPhone-12",
+        "price": "$797.12",
+        "image": "https://i.ibb.co/ct6wQ7X/Untitled-design-8.png",
+        "company": "Apple",
+        "quantity": 10,
+        "email": "nmehedi23@gmail.com",
+        "description": "Instead, focus on the positive things in your life and show some enthusiasm about whatever topic you're discussing. Avoid using words repetitively. It's hard to have an interesting conversation when you get the same old, monotone replies every time:Lol, Ah, Wow, Oh, etc."
+    },
+    {
+        "name": "iPad Pro",
+        "price": "$850.24",
+        "image": "https://i.ibb.co/4NyGG5s/Untitled-design-9.png",
+        "company": "Apple",
+        "quantity": 7,
+        "email": "nmehedi23@gmail.com",
+        "description": "The iPad Pro models support multitasking in split-screen mode, which is an ideal way to use the extra screen space on the 12.9-inch version. Both the 12.9-inch and the 11-inch models run on an Apple M1 chip and have a 16-core Neural Engine. The 5th-generation iPad Air is no slouch in the speed category."
+    },
+    {
+        "name": "iPad Air",
+        "price": "$1,147.68",
+        "image": "https://i.ibb.co/cbDYsF3/Untitled-design-10.png",
+        "company": "Apple",
+        "quantity": 3,
+        "email": "nmehedi23@gmail.com",
+        "description": "A lot of people will be wondering if they should get the Air instead of an 11-inch iPad Pro, and I think the choice is easy — buy the Air. You give up the ProMotion display, Face ID, a couple of speakers, an extra rear camera with LIDAR, and the option for mmWave 5G."
+    },
+    {
+        "name": "Airpods Max",
+        "price": "$635.81",
+        "image": "https://i.ibb.co/P9SHyRm/Untitled-design-11.png",
+        "company": "Apple",
+        "quantity": 12,
+        "email": "nmehedi23@gmail.com",
+        "description": "long with the headphones, in the box you'll get a carrying Smart Case and Lightning-to-USB-C cable, but no power adapter. The AirPods Max also skip on the Lightning-to-3.5mm audio cable, which you'll need to pick up for $35 if you want a non-Bluetooth listening option"
+    },
+    {
+        "name": "iPad",
+        "price": "$1,151.64",
+        "image": "https://i.ibb.co/PtVNPFN/Untitled-design-12.png",
+        "company": "Apple",
+        "quantity": 12,
+        "email": "nmehedi23@gmail.com",
+        "description": "An iPad does not have its own phone number. The number you may be referring to is not a regular phone number. The phone number associated with a cellular data service account on an iPad is used by the carrier for billing purposes."
+    },
+    {
+        "name": "Airpods Pro",
+        "price": "$965.64",
+        "image": "https://i.ibb.co/G06vQpm/Untitled-design-13.png",
+        "company": "Apple",
+        "quantity": 11,
+        "email": "nmehedi23@gmail.com",
+        "description": "According to Apple, AirPods Pro deliver superior sound than the original AirPods thanks to built-in speaker technology and Adaptive EQ functionality. Adaptive EQ tunes the low- and mid-frequencies of music that's playing to the shape of each person's ear, for what Apple says is a rich, immersive listening experience."
+    }
+]

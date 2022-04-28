@@ -1,0 +1,26 @@
+.product-container{
+    height: 700px;
+    position: relative;
+    border: 1px solid #FF6263;
+    border-top: 0px;
+    border-bottom: 0px;
+}
+
+.text-container{
+    text-align: justify;
+}
+
+.manage-btn{
+    background-color: #BF3325 !important;
+    color: white !important;
+    font-weight: bold !important;
+    letter-spacing: 1.5px !important;
+    position: absolute !important;
+    bottom: 0 !important; 
+}
+.manage-btn:hover{
+    background-color: #B4161B!important;
+    color: white!important;
+    font-weight: bold!important;
+    letter-spacing: 1.5px!important;
+}  
