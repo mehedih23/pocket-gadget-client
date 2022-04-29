@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   useEffect(() => {
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div>
+      <Toaster></Toaster>
       <NavBar></NavBar>
 
       <Routes>

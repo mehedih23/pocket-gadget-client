@@ -1,10 +1,49 @@
 import React from 'react'
 import { Button, Form } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
+import toast from 'react-hot-toast'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { ClipLoader } from 'react-spinners'
+import auth from '../../firebase.init'
 import './Login.css'
 
 
 const Login = () => {
+    let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    if (user) {
+        toast.success('User Login Successfully', { id: 'loged-in' })
+        navigate(from, { replace: true });
+    }
+
+    if (loading) {
+        return <div className='vh-100 d-flex justify-content-center align-items-center'>
+            <ClipLoader style={{ color: '#dc3545' }} loading={loading} size={150} />
+        </div>
+    }
+
+    if (error) {
+        toast.error(error.message, { id: 'login-error' });
+    }
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        signInWithEmailAndPassword(email, password)
+    }
+
+
+
     return (
         <div className='container mb-3'>
             <div className='text-center' >
@@ -14,7 +53,7 @@ const Login = () => {
             </div>
             <div>
                 <h2 className='text-center my-5 fw-bold'>Login</h2>
-                <Form className='mb-3'>
+                <Form onSubmit={handleLogin} className='mb-3'>
                     <Form.Group className="mb-3 col-lg-8 col-md-8 col-12 mx-auto" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control name='email' type="email" placeholder="Enter email" />
