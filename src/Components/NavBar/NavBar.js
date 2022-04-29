@@ -1,10 +1,11 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const NavBar = () => {
+    const { pathname } = useLocation()
     return (
-        <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+        <Navbar style={pathname.includes('login') || pathname.includes('signup') ? { display: 'none' } : { display: 'block' }} collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
                 <Navbar.Brand as={Link} to="/home">
                     <img
@@ -22,10 +23,8 @@ const NavBar = () => {
                         <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link as={Link} to="/deets">More deets</Nav.Link>
-                        <Nav.Link as={Link} eventKey={2} to="/memes">
-                            Dank memes
-                        </Nav.Link>
+                        <Nav.Link as={Link} to="/login">Login</Nav.Link>
+                        <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -1,0 +1,33 @@
+.reset-pass{
+    text-decoration: none;
+    color: #f83d0c;
+}
+.reset-pass:hover{
+    color: #f83d0c;
+}
+
+.or-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.or-container p{
+    margin: 0 10px;
+    font-weight: bold;
+}
+.or{
+    width: 280px;
+    height: 1px;
+    border: 1px solid black;
+}
+
+.google-container{
+    border: 3px solid #f83d0c;
+    border-radius: 50px;
+    padding: 3px;
+}
+
+.google{
+    height: 30px;
+    margin: 0px 15px;
+}
