@@ -24,7 +24,7 @@ const ProductDetails = () => {
         fetch(`http://localhost:5000/product/${id}`)
             .then(response => response.json())
             .then(data => setProduct(data))
-    }, [id, quantity]);
+    }, [id]);
 
     // setCount(quantity);
     // console.log(count);

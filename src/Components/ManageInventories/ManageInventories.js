@@ -1,5 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { createContext, useEffect, useState } from 'react'
 import AllProducts from '../AllProducts/AllProducts';
+
+
+export const ReloadContext = createContext();
 
 const ManageInventories = () => {
     const [allProducts, setAllProducts] = useState([]);
@@ -10,16 +13,18 @@ const ManageInventories = () => {
             .then(data => setAllProducts(data))
     }, []);
     return (
-        <div className='container'>
-            <h2 className='text-center my-3'>Manage All Products</h2>
-            <div className='row'>
-                {
-                    allProducts.map(allpd => <AllProducts key={allpd._id}
-                        allProducts={allpd}
-                    ></AllProducts>)
-                }
+        <ReloadContext.Provider value={setAllProducts}>
+            <div className='container'>
+                <h2 className='text-center my-3'>Manage All Products</h2>
+                <div className='row'>
+                    {
+                        allProducts.map(allpd => <AllProducts key={allpd._id}
+                            allProducts={allpd}
+                        ></AllProducts>)
+                    }
+                </div>
             </div>
-        </div>
+        </ReloadContext.Provider>
     )
 }
 

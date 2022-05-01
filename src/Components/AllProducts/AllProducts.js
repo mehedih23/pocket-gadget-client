@@ -1,7 +1,31 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import toast from 'react-hot-toast';
+import { ReloadContext } from '../ManageInventories/ManageInventories';
 
 const AllProducts = ({ allProducts }) => {
     const { _id, name, image, price, quantity, company, description } = allProducts;
+
+    const reload = useContext(ReloadContext);
+    const handleReload = () => {
+        fetch(`http://localhost:5000/allproducts`)
+            .then(response => response.json())
+            .then(data => reload(data))
+    }
+
+    const handleDelete = (e) => {
+        const url = `http://localhost:5000/product/${_id}`;
+        fetch(url, {
+            method: 'DELETE'
+        })
+            .then(response => response.json())
+            .then(data => {
+                handleReload();
+                toast.success('Item Delete Successfully.', { id: 'delete-successfully' })
+            })
+    }
+
+
+
     return (
         <div data-aos="fade-down"
             data-aos-easing="linear"
@@ -17,7 +41,7 @@ const AllProducts = ({ allProducts }) => {
                 <p><strong>Seller : {company}</strong></p>
                 <p className='text-container'><strong>Description :</strong> {description}</p>
             </div>
-            <button className='btn mx-3 manage-btn'>Delete</button>
+            <button onClick={handleDelete} className='btn mx-3 manage-btn'>Delete</button>
         </div>
     )
 }
