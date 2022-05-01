@@ -1,0 +1,13 @@
+.delete-btn{
+    background-color: #BF3325 !important;
+    color: white !important;
+    font-weight: bold !important;
+    letter-spacing: 1.5px !important;
+}
+
+.delete-btn:hover{
+    background-color: #B4161B!important;
+    color: white!important;
+    font-weight: bold!important;
+    letter-spacing: 1.5px!important;
+} 

@@ -1,10 +1,7 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
-import './Products.css'
 
-const Products = ({ product }) => {
-    const { _id, name, image, price, quantity, company, description } = product;
-    const navigate = useNavigate();
+const AllProducts = ({ allProducts }) => {
+    const { _id, name, image, price, quantity, company, description } = allProducts;
     return (
         <div data-aos="fade-down"
             data-aos-easing="linear"
@@ -20,9 +17,9 @@ const Products = ({ product }) => {
                 <p><strong>Seller : {company}</strong></p>
                 <p className='text-container'><strong>Description :</strong> {description}</p>
             </div>
-            <button onClick={() => navigate(`/inventory/${_id}`)} className='btn mx-3 manage-btn'>Mange</button>
+            <button className='btn mx-3 manage-btn'>Delete</button>
         </div>
     )
 }
 
-export default Products
+export default AllProducts

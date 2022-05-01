@@ -1,17 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Carousel } from 'react-bootstrap'
 import Helmet from 'react-helmet'
+import { useNavigate } from 'react-router-dom';
 import Products from '../Products/Products';
 import Tracker from '../Tracker/Tracker';
 
+// export const ReloadContext = createContext();
+
 const Home = () => {
+    const navigate = useNavigate()
     const [products, setProducts] = useState([]);
     useEffect(() => {
         const url = 'http://localhost:5000/products'
         fetch(url)
             .then(response => response.json())
             .then(data => setProducts(data))
-    }, [])
+    }, []);
     return (
         <>
             <Helmet>
@@ -74,6 +78,7 @@ const Home = () => {
                 <h1>Inventory</h1>
                 <p style={{ fontSize: '24px', fontWeight: 'bold' }}>Invent Your <span style={{ color: '#B4161B' }}>Pocket Gadget</span></p>
             </div>
+            {/* <ReloadContext.Provider value={setProducts}> */}
             <div className='container'>
                 <div className='row'>
                     {
@@ -83,6 +88,11 @@ const Home = () => {
                         ></Products>)
                     }
                 </div>
+            </div>
+            {/* </ReloadContext.Provider> */}
+
+            <div className='container my-4'>
+                <button onClick={() => navigate('/manage-inventories')} className='btn btn-outline-danger'>Manage Inventories</button>
             </div>
 
             <div>

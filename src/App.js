@@ -9,6 +9,9 @@ import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
 import Signup from './Components/Signup/Signup';
 import { Toaster } from 'react-hot-toast';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
+import ManageInventories from './Components/ManageInventories/ManageInventories';
 
 function App() {
   useEffect(() => {
@@ -25,6 +28,16 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/inventory/:id' element={
+          <RequireAuth>
+            <ProductDetails></ProductDetails>
+          </RequireAuth>
+        }></Route>
+        <Route path='/manage-inventories' element={
+          <RequireAuth>
+            <ManageInventories></ManageInventories>
+          </RequireAuth>
+        }></Route>
       </Routes>
       <Footer></Footer>
     </div>
