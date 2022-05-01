@@ -36,10 +36,10 @@ const AllProducts = ({ allProducts }) => {
             </div>
             <div className='info-container px-3'>
                 <h3>{name}</h3>
-                <h4><strong> Price : {price}</strong></h4>
+                <h4><strong> Price : ${price}</strong></h4>
                 <p><strong>Quantity : {quantity}</strong></p>
                 <p><strong>Seller : {company}</strong></p>
-                <p className='text-container'><strong>Description :</strong> {description}</p>
+                <p className='text-container'><strong>Description :</strong> {description.length > 250 ? description.slice(0, 250) : description}</p>
             </div>
             <button onClick={handleDelete} className='btn mx-3 manage-btn'>Delete</button>
         </div>

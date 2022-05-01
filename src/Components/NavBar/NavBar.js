@@ -23,8 +23,9 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/features">Features</Nav.Link>
-                        <Nav.Link as={Link} to="/pricing">Pricing</Nav.Link>
+                        <Nav.Link as={Link} to="/manage-inventories">Manage Items</Nav.Link>
+                        <Nav.Link as={Link} to="/additem">Add Item</Nav.Link>
+                        <Nav.Link as={Link} to="/my-items">My items</Nav.Link>
                     </Nav>
                     <Nav>
                         {user ? <Nav.Link as={Link} onClick={() => signOut(auth)} to="/">Logout</Nav.Link> : <> <Nav.Link as={Link} to="/login">Login</Nav.Link>

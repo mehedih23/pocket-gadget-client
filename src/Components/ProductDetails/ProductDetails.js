@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './ProductDetails.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import { Button, Form } from 'react-bootstrap'
 // import { ReloadContext } from '../Home/Home'
 
 const ProductDetails = () => {
+    const navigate = useNavigate();
     const [product, setProduct] = useState({})
     const { image, name, price, description, quantity, company } = product;
     const { id } = useParams();
@@ -76,7 +77,10 @@ const ProductDetails = () => {
                         <p><b>Quantity : {quantity}</b></p>
                     </div>
                     <h4>Seller : {company}</h4>
-                    <button onClick={handleUpdate} className='btn delete-btn my-3'>Delete</button>
+                    <div className='d-flex justify-content-between align-items-center'>
+                        <button onClick={handleUpdate} className='btn delete-btn my-3'>Delete</button>
+                        <button onClick={() => navigate('/manage-inventories')} className='btn btn-outline-danger my-3'>Manage Inventory</button>
+                    </div>
                 </div>
             </div>
 
@@ -87,7 +91,7 @@ const ProductDetails = () => {
                         <Form.Label>Item Count</Form.Label>
                         <Form.Control type="number" name='count' placeholder="Enter number or restock product" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant='danger' type="submit">
                         Restock
                     </Button>
                 </Form>

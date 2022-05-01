@@ -1,7 +1,7 @@
 [
     {
         "name": "iphone-13 pro",
-        "price": "$1,163.29",
+        "price": "1,163.29",
         "image": "https://i.ibb.co/H7z5PKD/iphone-13-pro.jpg",
         "company": "Apple",
         "quantity": 7,
@@ -10,7 +10,7 @@
     },
     {
         "name": "Apple Watch-s7",
-        "price": "$676.05",
+        "price": "676.05",
         "image": "https://i.ibb.co/PzWqtLJ/Untitled-design-1.png",
         "company": "Apple",
         "quantity": 8,
@@ -19,7 +19,7 @@
     },
     {
         "name": "iPhone SE",
-        "price": "$642.37",
+        "price": "642.37",
         "image": "https://i.ibb.co/r0L57Ym/Untitled-design-2.png",
         "company": "Apple",
         "quantity": 7,
@@ -28,7 +28,7 @@
     },
     {
         "name": "Macbook Air",
-        "price": "$1,077.83",
+        "price": "1,077.83",
         "image": "https://i.ibb.co/9rGjZ7Q/Untitled-design-3.png",
         "company": "Apple",
         "quantity": 11,
@@ -37,7 +37,7 @@
     },
     {
         "name": "Apple Watch SE",
-        "price": "$760.94",
+        "price": "760.94",
         "image": "https://i.ibb.co/xjGGsSh/Untitled-design-4.png",
         "company": "Apple",
         "quantity": 2,
@@ -46,7 +46,7 @@
     },
     {
         "name": "iPhone 11",
-        "price": "$691.00",
+        "price": "691.00",
         "image": "https://i.ibb.co/MNsGYZ3/Untitled-design-5.png",
         "company": "Apple",
         "quantity": 5,
@@ -55,7 +55,7 @@
     },
     {
         "name": "iPad Mini",
-        "price": "$775.49",
+        "price": "775.49",
         "image": "https://i.ibb.co/wQqK8RY/Untitled-design-6.png",
         "company": "Apple",
         "quantity": 2,
@@ -64,7 +64,7 @@
     },
     {
         "name": "Macbook Pro",
-        "price": "$1,108.34",
+        "price": "1,108.34",
         "image": "https://i.ibb.co/DK9YK19/Untitled-design-7.png",
         "company": "Apple",
         "quantity": 2,
@@ -73,7 +73,7 @@
     },
     {
         "name": "iPhone-12",
-        "price": "$797.12",
+        "price": "797.12",
         "image": "https://i.ibb.co/ct6wQ7X/Untitled-design-8.png",
         "company": "Apple",
         "quantity": 10,
@@ -82,7 +82,7 @@
     },
     {
         "name": "iPad Pro",
-        "price": "$850.24",
+        "price": "850.24",
         "image": "https://i.ibb.co/4NyGG5s/Untitled-design-9.png",
         "company": "Apple",
         "quantity": 7,
@@ -91,7 +91,7 @@
     },
     {
         "name": "iPad Air",
-        "price": "$1,147.68",
+        "price": "1,147.68",
         "image": "https://i.ibb.co/cbDYsF3/Untitled-design-10.png",
         "company": "Apple",
         "quantity": 3,
@@ -100,7 +100,7 @@
     },
     {
         "name": "Airpods Max",
-        "price": "$635.81",
+        "price": "635.81",
         "image": "https://i.ibb.co/P9SHyRm/Untitled-design-11.png",
         "company": "Apple",
         "quantity": 12,
@@ -109,7 +109,7 @@
     },
     {
         "name": "iPad",
-        "price": "$1,151.64",
+        "price": "1,151.64",
         "image": "https://i.ibb.co/PtVNPFN/Untitled-design-12.png",
         "company": "Apple",
         "quantity": 12,
@@ -118,7 +118,7 @@
     },
     {
         "name": "Airpods Pro",
-        "price": "$965.64",
+        "price": "965.64",
         "image": "https://i.ibb.co/G06vQpm/Untitled-design-13.png",
         "company": "Apple",
         "quantity": 11,

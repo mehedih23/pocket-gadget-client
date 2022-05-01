@@ -12,6 +12,8 @@ import { Toaster } from 'react-hot-toast';
 import RequireAuth from './Components/RequireAuth/RequireAuth';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
 import ManageInventories from './Components/ManageInventories/ManageInventories';
+import AddItem from './Components/AddItem/AddItem';
+import MyItems from './Components/MyItems/MyItems';
 
 function App() {
   useEffect(() => {
@@ -36,6 +38,16 @@ function App() {
         <Route path='/manage-inventories' element={
           <RequireAuth>
             <ManageInventories></ManageInventories>
+          </RequireAuth>
+        }></Route>
+        <Route path='/additem' element={
+          <RequireAuth>
+            <AddItem></AddItem>
+          </RequireAuth>
+        }></Route>
+        <Route path='/my-items' element={
+          <RequireAuth>
+            <MyItems></MyItems>
           </RequireAuth>
         }></Route>
       </Routes>
