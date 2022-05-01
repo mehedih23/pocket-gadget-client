@@ -1,30 +1,32 @@
 import React, { useContext } from 'react'
 import toast from 'react-hot-toast';
-import { ReloadContext } from '../ManageInventories/ManageInventories';
+import { MyReloadContext } from '../MyItems/MyItems';
 
-const AllProducts = ({ allProducts }) => {
-    const { _id, name, image, price, quantity, company, description } = allProducts;
+const MyItem = ({ item }) => {
+    const { _id, name, image, price, quantity, company, description, email } = item;
 
-    const reload = useContext(ReloadContext);
+    const reload = useContext(MyReloadContext);
     const handleReload = () => {
-        fetch(`http://localhost:5000/allproducts`)
+        const url = `http://localhost:5000/myproducts?email=${email}`;
+        fetch(url)
             .then(response => response.json())
             .then(data => reload(data))
     }
 
     const handleDelete = () => {
-        const url = `http://localhost:5000/product/${_id}`;
-        fetch(url, {
-            method: 'DELETE'
-        })
-            .then(response => response.json())
-            .then(data => {
-                handleReload();
-                toast.success('Item Delete Successfully.', { id: 'delete-successfully' })
+        const url = `http://localhost:5000/myproducts/${_id}`;
+        const proceed = window.confirm('Are You Sure?')
+        if (proceed) {
+            fetch(url, {
+                method: 'DELETE'
             })
+                .then(response => response.json())
+                .then(data => {
+                    handleReload();
+                    toast.success('Item Delete Successfully.', { id: 'delete-successfully' })
+                })
+        }
     }
-
-
 
     return (
         <div data-aos="fade-down"
@@ -46,4 +48,4 @@ const AllProducts = ({ allProducts }) => {
     )
 }
 
-export default AllProducts
+export default MyItem
