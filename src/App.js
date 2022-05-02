@@ -14,6 +14,7 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import ManageInventories from './Components/ManageInventories/ManageInventories';
 import AddItem from './Components/AddItem/AddItem';
 import MyItems from './Components/MyItems/MyItems';
+import Blogs from './Components/Blogs/Blogs';
 
 function App() {
   useEffect(() => {
@@ -50,6 +51,7 @@ function App() {
             <MyItems></MyItems>
           </RequireAuth>
         }></Route>
+        <Route path='blogs' element={<Blogs></Blogs>}></Route>
       </Routes>
       <Footer></Footer>
     </div>
