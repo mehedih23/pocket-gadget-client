@@ -3,23 +3,20 @@ import './ProductDetails.css'
 import { useNavigate, useParams } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import { Button, Form } from 'react-bootstrap'
-// import { ReloadContext } from '../Home/Home'
 
 const ProductDetails = () => {
     const navigate = useNavigate();
     const [product, setProduct] = useState({})
     const { image, name, price, description, quantity, company } = product;
     const { id } = useParams();
-    // const [count, setCount] = useState(0)
 
-
-    /*  const reload = useContext(ReloadContext);
-     console.log(reload);
-     const handleReload = () => {
-         fetch(`http://localhost:5000/product/${id}`)
-             .then(response => response.json())
-             .then(data => reload(data))
-     } */
+    const handleReload = () => {
+        fetch(`http://localhost:5000/product/${id}`)
+            .then(response => response.json())
+            .then(data => {
+                setProduct(data)
+            })
+    }
 
     useEffect(() => {
         fetch(`http://localhost:5000/product/${id}`)
@@ -27,8 +24,7 @@ const ProductDetails = () => {
             .then(data => setProduct(data))
     }, [id]);
 
-    // setCount(quantity);
-    // console.log(count);
+
     const handleUpdate = () => {
         if (quantity > 0) {
             let count = quantity - 1;
@@ -43,6 +39,7 @@ const ProductDetails = () => {
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
+                    handleReload();
                 })
         } else {
             toast.error("You don't have enough items");
