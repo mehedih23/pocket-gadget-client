@@ -48,13 +48,29 @@ const ProductDetails = () => {
 
     const handleIncrease = (e) => {
         e.preventDefault();
-        const count = parseInt(e.target.count.value);
+        const count = e.target.count.value;
         if (count === 0 || count < 0) {
-            toast.error('Please Enter a valid quantity!', { id: 'valid-quantity' });
+            console.log(count)
+            toast.error('Please Enter a valid quantity!', { id: 'error-quantity' });
             e.target.reset();
         }
         else {
-            console.log(count)
+            const restockQuantity = parseInt(count) + (parseInt(quantity));
+            const url = `http://localhost:5000/update/${id}`
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ itemQuantity: restockQuantity })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    handleReload();
+                })
+            toast.success('Item Restock successfully!', { id: 'valid-quantity' });
+            e.target.reset();
         }
 
     }
@@ -75,7 +91,9 @@ const ProductDetails = () => {
                     </div>
                     <h4>Seller : {company}</h4>
                     <div className='d-flex justify-content-between align-items-center'>
-                        <button onClick={handleUpdate} className='btn delete-btn my-3'>Delete</button>
+                        {
+                            quantity === 0 ? <p style={{ fontWeight: 'bold' }} className='text-danger'>Out of Stock</p> : <button onClick={handleUpdate} className='btn delete-btn my-3'>Delete</button>
+                        }
                         <button onClick={() => navigate('/manage-inventories')} className='btn btn-outline-danger my-3'>Manage Inventory</button>
                     </div>
                 </div>
