@@ -92,7 +92,7 @@ const ProductDetails = () => {
                     <h4>Seller : {company}</h4>
                     <div className='d-flex justify-content-between align-items-center'>
                         {
-                            quantity === 0 ? <p style={{ fontWeight: 'bold' }} className='text-danger'>Out of Stock</p> : <button onClick={handleUpdate} className='btn delete-btn my-3'>Delete</button>
+                            quantity === 0 ? <p style={{ fontWeight: 'bold' }} className='text-danger'>Out of Stock</p> : <button onClick={handleUpdate} className='btn delete-btn my-3'>Delivered</button>
                         }
                         <button onClick={() => navigate('/manage-inventories')} className='btn btn-outline-danger my-3'>Manage Inventory</button>
                     </div>
