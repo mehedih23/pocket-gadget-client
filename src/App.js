@@ -16,6 +16,7 @@ import AddItem from './Components/AddItem/AddItem';
 import MyItems from './Components/MyItems/MyItems';
 import Blogs from './Components/Blogs/Blogs';
 import NotFound from './Components/NotFound/NotFound';
+import ResetPass from './Components/ResetPass/ResetPass';
 
 function App() {
   useEffect(() => {
@@ -53,6 +54,7 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='reset-pass' element={<ResetPass></ResetPass>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
