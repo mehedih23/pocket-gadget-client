@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Button, Form } from 'react-bootstrap'
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import toast from 'react-hot-toast'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { ClipLoader } from 'react-spinners'
@@ -20,19 +20,49 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    // Google Sign In //
+
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+
+    useEffect(() => {
+        if (user || googleUser) {
+            navigate(from, { replace: true });
+        }
+    }, [from, googleUser, navigate, user])
+
+    // Email User //
     if (user) {
         toast.success('User Login Successfully', { id: 'loged-in' })
         navigate(from, { replace: true });
     }
 
+    //googleUser//
+    if (googleUser) {
+        navigate(from, { replace: true });
+        toast.success('Login Successfully', { id: 'success' })
+    }
+
+    // Email Loading //
     if (loading) {
         return <div className='vh-100 d-flex justify-content-center align-items-center'>
             <ClipLoader style={{ color: '#dc3545' }} loading={loading} size={150} />
         </div>
     }
 
+    //googleLoading//
+    if (googleLoading) {
+        return <div className='vh-100 d-flex justify-content-center align-items-center'><ClipLoader loading={googleLoading} size={100} /></div>
+    }
+
+    // Email error //
     if (error) {
         toast.error(error.message, { id: 'login-error' });
+    }
+
+    //googleError//
+    if (googleError) {
+        toast.error(googleError?.message, { id: 'googleError2' })
     }
 
     const handleLogin = (e) => {
@@ -87,7 +117,11 @@ const Login = () => {
 
 
                 <div className="google-container my-3 col-lg-8 col-md-8 col-12 mx-auto">
-                    <Button className='w-100' variant="light" type="submit">
+                    <Button
+                        onClick={() => signInWithGoogle()}
+                        className='w-100'
+                        variant="light"
+                        type="submit">
                         <img className='google' src="https://i.ibb.co/qn25rYN/google-1772223-1507807.png" alt="google" />
                         Sign in with Google
                     </Button>

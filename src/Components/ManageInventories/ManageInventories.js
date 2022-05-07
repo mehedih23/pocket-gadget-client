@@ -15,7 +15,7 @@ const ManageInventories = () => {
             .then(data => setAllProducts(data))
     }, []);
     return (
-        <ReloadContext.Provider value={setAllProducts}>
+        <ReloadContext.Provider value={setAllProducts} >
             <div className='container'>
                 <div className='d-flex justify-content-between align-items-center'>
                     <h2 className='my-3'>Manage All Products</h2>

@@ -23,9 +23,12 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/manage-inventories">Manage Items</Nav.Link>
-                        <Nav.Link as={Link} to="/additem">Add Item</Nav.Link>
-                        <Nav.Link as={Link} to="/my-items">My items</Nav.Link>
+                        {user ? <>
+                            <Nav.Link as={Link} to="/manage-inventories">Manage Items</Nav.Link>
+                            <Nav.Link as={Link} to="/additem">Add Item</Nav.Link>
+                            <Nav.Link as={Link} to="/my-items">My items</Nav.Link>
+                        </> : ''
+                        }
                     </Nav>
                     <Nav>
                         <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>

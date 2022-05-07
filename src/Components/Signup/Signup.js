@@ -3,7 +3,7 @@ import './Signup.css';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import toast from 'react-hot-toast';
 import { ClipLoader } from 'react-spinners';
 
@@ -12,7 +12,7 @@ import { ClipLoader } from 'react-spinners';
 const Signup = () => {
     let navigate = useNavigate();
     let location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    let from = location?.state?.from?.pathname || "/";
     const [checked, setChecked] = useState(false);
     const [name, setName] = useState('');
     const handleName = (e) => {
@@ -24,23 +24,49 @@ const Signup = () => {
         newUser,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    // google signup //
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+
+    // email user //
     if (newUser) {
-        newUser.displayName = name;
+        const user = newUser.user;
+        user.displayName = name;
         toast.success('Account Created Successfully', { id: 'account-created-successfully' })
         navigate(from, { replace: true });
     }
 
-    if (loading) {
-        return <div className='vh-100 d-flex justify-content-center align-items-center'>
-            <ClipLoader style={{ color: '#dc3545' }} loading={loading} size={150} />
-        </div>
+    // Google user //
+    if (googleUser) {
+        toast.success('Account Created Successfully', { id: 'account-created-successfully' })
+        navigate(from, { replace: true });
     }
 
+    // email & google loading //
+    if (loading || googleLoading) {
+        return <>
+            <div className='vh-100 d-flex justify-content-center align-items-center'>
+                <ClipLoader style={{ color: '#dc3545' }} loading={loading} size={150} />
+            </div>
+            <div className='vh-100 d-flex justify-content-center align-items-center'>
+                <ClipLoader style={{ color: '#dc3545' }} loading={googleLoading} size={150} />
+            </div>
+        </>
+    }
+
+    // email error //
     if (error) {
         toast.error(error.message, { id: 'user-create-error' });
         return navigate('/')
     }
+
+    // googleError //
+    if (googleError) {
+        toast.error(googleError.message, { id: 'user-create-error' });
+        return navigate('/')
+    }
+
 
 
     const handleSignUp = (e) => {
@@ -53,6 +79,17 @@ const Signup = () => {
         }
         else {
             createUserWithEmailAndPassword(email, password)
+            toast.success('Please Verify Your Email', {
+                style: {
+                    border: '1px solid #713200',
+                    padding: '16px',
+                    color: '#713200',
+                },
+                iconTheme: {
+                    primary: '#713200',
+                    secondary: '#FFFAEE',
+                },
+            });
             e.target.reset();
         }
     }
@@ -102,7 +139,11 @@ const Signup = () => {
                     </div>
                 </div>
                 <div className="google-container my-3 col-lg-8 col-md-8 col-12 mx-auto">
-                    <Button className='w-100' variant="light" type="submit">
+                    <Button
+                        onClick={() => signInWithGoogle()}
+                        className='w-100'
+                        variant="light"
+                        type="submit">
                         <img className='google' src="https://i.ibb.co/qn25rYN/google-1772223-1507807.png" alt="google" />
                         Sign in with Google
                     </Button>
