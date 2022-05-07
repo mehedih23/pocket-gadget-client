@@ -9,12 +9,11 @@ export const MyReloadContext = createContext();
 const MyItems = () => {
     const [user] = useAuthState(auth)
     const [myItems, setMyItems] = useState([]);
-    console.log(user.email)
     useEffect(() => {
         const getMyItems = () => {
             const email = user.email;
             const url = `http://localhost:5000/myproducts?email=${email}`;
-            fetch(url)
+            fetch(url, { email: email })
                 .then(response => response.json())
                 .then(data => setMyItems(data))
         }
@@ -26,7 +25,7 @@ const MyItems = () => {
                 <h2>My Items</h2>
                 <div className='row'>
                     {
-                        myItems.map(item => <MyItem
+                        myItems?.map(item => <MyItem
                             key={item._id}
                             item={item}
                         ></MyItem>)
