@@ -72,7 +72,6 @@ const Home = () => {
                 </Carousel>
             </div>
 
-            {/* Limited 6 Products */}
             <div className='text-center my-4'>
                 <h1>Inventory</h1>
                 <p style={{ fontSize: '24px', fontWeight: 'bold' }}>Invent Your <span style={{ color: '#B4161B' }}>Pocket Gadget</span></p>
