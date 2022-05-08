@@ -12,7 +12,7 @@ const Home = () => {
     const navigate = useNavigate()
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/products'
+        const url = 'https://pocket-gadget.herokuapp.com/products'
         fetch(url)
             .then(response => response.json())
             .then(data => setProducts(data))

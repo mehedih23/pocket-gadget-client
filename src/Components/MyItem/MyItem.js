@@ -7,14 +7,14 @@ const MyItem = ({ item }) => {
 
     const reload = useContext(MyReloadContext);
     const handleReload = () => {
-        const url = `http://localhost:5000/myproducts?email=${email}`;
+        const url = `https://pocket-gadget.herokuapp.com/myproducts?email=${email}`;
         fetch(url)
             .then(response => response.json())
             .then(data => reload(data))
     }
 
     const handleDelete = () => {
-        const url = `http://localhost:5000/myproducts/${_id}`;
+        const url = `https://pocket-gadget.herokuapp.com/myproducts/${_id}`;
         const proceed = window.confirm('Are You Sure?')
         if (proceed) {
             fetch(url, {

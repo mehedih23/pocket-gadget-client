@@ -5,7 +5,7 @@ import './TopProducts.css'
 const TopProducts = () => {
     const [topProducts, setTopProducts] = useState([])
     useEffect(() => {
-        const url = 'http://localhost:5000/top-products';
+        const url = 'https://pocket-gadget.herokuapp.com/top-products';
         fetch(url)
             .then(response => response.json())
             .then(data => setTopProducts(data))

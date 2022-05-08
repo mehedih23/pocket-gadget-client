@@ -7,13 +7,13 @@ const AllProducts = ({ allProducts }) => {
 
     const reload = useContext(ReloadContext);
     const handleReload = () => {
-        fetch(`http://localhost:5000/allproducts`)
+        fetch(`https://pocket-gadget.herokuapp.com/allproducts`)
             .then(response => response.json())
             .then(data => reload(data))
     }
 
     const handleDelete = () => {
-        const url = `http://localhost:5000/product/${_id}`;
+        const url = `https://pocket-gadget.herokuapp.com/product/${_id}`;
         fetch(url, {
             method: 'DELETE'
         })

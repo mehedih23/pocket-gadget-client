@@ -11,7 +11,7 @@ const ProductDetails = () => {
     const { id } = useParams();
 
     const handleReload = () => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://pocket-gadget.herokuapp.com/product/${id}`)
             .then(response => response.json())
             .then(data => {
                 setProduct(data)
@@ -19,7 +19,7 @@ const ProductDetails = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://pocket-gadget.herokuapp.com/product/${id}`)
             .then(response => response.json())
             .then(data => setProduct(data))
     }, [id]);
@@ -28,7 +28,7 @@ const ProductDetails = () => {
     const handleUpdate = () => {
         if (quantity > 0) {
             let count = quantity - 1;
-            const url = `http://localhost:5000/update/${id}`
+            const url = `https://pocket-gadget.herokuapp.com/update/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -56,7 +56,7 @@ const ProductDetails = () => {
         }
         else {
             const restockQuantity = parseInt(count) + (parseInt(quantity));
-            const url = `http://localhost:5000/update/${id}`
+            const url = `https://pocket-gadget.herokuapp.com/update/${id}`
             fetch(url, {
                 method: 'PUT',
                 headers: {

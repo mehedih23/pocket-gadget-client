@@ -9,7 +9,7 @@ const ManageInventories = () => {
     const navigate = useNavigate();
     const [allProducts, setAllProducts] = useState([]);
     useEffect(() => {
-        const url = 'http://localhost:5000/allproducts'
+        const url = 'https://pocket-gadget.herokuapp.com/allproducts'
         fetch(url)
             .then(response => response.json())
             .then(data => setAllProducts(data))

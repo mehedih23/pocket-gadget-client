@@ -16,7 +16,7 @@ const MyItems = () => {
     useEffect(() => {
         const getMyItems = () => {
             const email = user.email;
-            const url = `http://localhost:5000/myproducts?email=${email}`;
+            const url = `https://pocket-gadget.herokuapp.com/myproducts?email=${email}`;
             const token = localStorage.getItem('accessToken');
             fetch(url, {
                 headers: {

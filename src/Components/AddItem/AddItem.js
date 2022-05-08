@@ -32,7 +32,7 @@ const AddItem = () => {
 
         const item = { name, price, image, company, quantity, email, description };
 
-        const url = 'http://localhost:5000/allproducts';
+        const url = 'https://pocket-gadget.herokuapp.com/allproducts';
         fetch(url, {
             method: 'POST',
             headers: {
