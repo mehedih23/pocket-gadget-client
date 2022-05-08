@@ -4,8 +4,17 @@ import { BsTwitter } from 'react-icons/bs';
 import { BsChatTextFill } from 'react-icons/bs';
 import { IoLogoYoutube } from 'react-icons/io';
 import './Footer.css'
+import toast from 'react-hot-toast';
 
 const Footer = () => {
+    // Handle subscribe //
+    const handleSubscribe = (e) => {
+        e.preventDefault();
+        const email = e.target.email.value;
+        console.log(email);
+        toast.success('Thanks For Subscribe', { id: 'subscribe' })
+        e.target.reset();
+    }
     return (
         <div className='footer mt-5'>
             <div className='container'>
@@ -26,21 +35,36 @@ const Footer = () => {
                     </div>
                     <div className='col-lg-4 col-md-6 col-12 py-5'>
 
-                        <div className='col-12'>
-                            <input className='w-100 p-2' type="email" name='email' id='email' placeholder='Email Address' required />
-                        </div>
-                        <button style={{ backgroundColor: '#4b4b4d' }} className='btn btn-outline-dark text-white fw-bold my-3'>Subscribe</button>
+                        <form onSubmit={handleSubscribe}>
+                            <div className='col-12'>
+                                <input className='w-100 p-2' type="email" name='email' id='email' placeholder='Email Address' required />
+                            </div>
+                            <input
+                                style={{ backgroundColor: '#4b4b4d' }}
+                                className='btn btn-outline-dark text-white fw-bold my-3'
+                                type='submit'
+                                value='Subscribe'
+                            ></input>
+                        </form>
                         <div className='d-flex justify-content-between'>
-                            <div style={{ backgroundColor: '#4b4b4d', width: '50px', height: '50px', borderRadius: '50px' }} className='d-flex justify-content-center align-items-center'>
+                            <div
+                                style={{ backgroundColor: '#4b4b4d', width: '50px', height: '50px', borderRadius: '50px' }}
+                                className='btn d-flex justify-content-center align-items-center'>
                                 <SiFacebook style={{ fontSize: '30px' }} />
                             </div>
-                            <div style={{ backgroundColor: '#4b4b4d', width: '50px', height: '50px', borderRadius: '50px' }} className='d-flex justify-content-center align-items-center'>
+                            <div
+                                style={{ backgroundColor: '#4b4b4d', width: '50px', height: '50px', borderRadius: '50px' }}
+                                className='btn d-flex justify-content-center align-items-center'>
                                 <BsTwitter style={{ fontSize: '30px' }} />
                             </div>
-                            <div style={{ backgroundColor: '#4b4b4d', width: '50px', height: '50px', borderRadius: '50px' }} className='d-flex justify-content-center align-items-center'>
+                            <div
+                                style={{ backgroundColor: '#4b4b4d', width: '50px', height: '50px', borderRadius: '50px' }}
+                                className='btn d-flex justify-content-center align-items-center'>
                                 <BsChatTextFill style={{ fontSize: '30px' }} />
                             </div>
-                            <div style={{ backgroundColor: '#4b4b4d', width: '50px', height: '50px', borderRadius: '50px' }} className='d-flex justify-content-center align-items-center'>
+                            <div
+                                style={{ backgroundColor: '#4b4b4d', width: '50px', height: '50px', borderRadius: '50px' }}
+                                className='btn d-flex justify-content-center align-items-center'>
                                 <IoLogoYoutube style={{ fontSize: '30px' }} />
                             </div>
                         </div>

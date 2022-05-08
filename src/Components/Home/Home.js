@@ -3,6 +3,7 @@ import { Carousel } from 'react-bootstrap'
 import Helmet from 'react-helmet'
 import { useNavigate } from 'react-router-dom';
 import Products from '../Products/Products';
+import Revenue from '../Revenue/Revenue';
 import TopProducts from '../TopProducts/TopProducts';
 import Tracker from '../Tracker/Tracker';
 
@@ -95,6 +96,10 @@ const Home = () => {
 
             <div className='container my-4'>
                 <TopProducts></TopProducts>
+            </div>
+
+            <div className='my-4'>
+                <Revenue></Revenue>
             </div>
 
             <div className='container my-4'>
