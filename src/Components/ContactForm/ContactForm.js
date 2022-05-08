@@ -12,7 +12,7 @@ const ContactForm = () => {
     return (
         <div className='container'>
             <div className='text-center my-3'>
-                <h2>Anything To Say? Please <strong style={{ color: '#E8BD0D' }}> Contact</strong></h2>
+                <h2>Anything To Say?<strong style={{ color: '#cf363f' }}> Please Contact</strong></h2>
             </div>
 
             <form onSubmit={handleContact}>

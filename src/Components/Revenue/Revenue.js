@@ -26,7 +26,7 @@ const Revenue = () => {
                             <div className='p-3' style={{ 'backgroundColor': '#2a2e3f', 'color': '#7b818f' }}>
                                 <p>Monthly Orders</p>
                                 <div className='d-flex justify-content-between align-items-center'>
-                                    <p style={{ 'fontSize': '20px', 'color': 'white' }}>$ 12,837</p>
+                                    <p style={{ 'fontSize': '20px', 'color': 'white' }}> 12,837</p>
                                     <p>
                                         <BsArrowUpShort style={{ 'color': '#38cb76' }} />
                                         62% increase
