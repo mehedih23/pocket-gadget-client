@@ -32,6 +32,7 @@ const NavBar = () => {
                     </Nav>
                     <Nav>
                         <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
+                        <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                         {user ? <Nav.Link as={Link} onClick={() => signOut(auth)} to="/">Logout</Nav.Link> : <> <Nav.Link as={Link} to="/login">Login</Nav.Link>
                             <Nav.Link as={Link} to="/signup">Sign Up</Nav.Link></>}
                     </Nav>

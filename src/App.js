@@ -18,6 +18,7 @@ import Blogs from './Components/Blogs/Blogs';
 import NotFound from './Components/NotFound/NotFound';
 import ResetPass from './Components/ResetPass/ResetPass';
 import { ClipLoader } from 'react-spinners';
+import ContactForm from './Components/ContactForm/ContactForm';
 
 
 function App() {
@@ -70,8 +71,9 @@ function App() {
                   <MyItems></MyItems>
                 </RequireAuth>
               }></Route>
-              <Route path='blogs' element={<Blogs></Blogs>}></Route>
-              <Route path='reset-pass' element={<ResetPass></ResetPass>}></Route>
+              <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+              <Route path='/reset-pass' element={<ResetPass></ResetPass>}></Route>
+              <Route path='/contact' element={<ContactForm></ContactForm>}></Route>
               <Route path='*' element={<NotFound></NotFound>}></Route>
             </Routes>
             <Footer></Footer>
