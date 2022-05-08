@@ -1,6 +1,8 @@
+import { signOut } from 'firebase/auth';
 import React, { createContext, useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init'
 import MyItem from '../MyItem/MyItem'
 
@@ -8,6 +10,7 @@ import MyItem from '../MyItem/MyItem'
 export const MyReloadContext = createContext();
 
 const MyItems = () => {
+    const navigate = useNavigate();
     const [user] = useAuthState(auth)
     const [myItems, setMyItems] = useState([]);
     useEffect(() => {
@@ -24,13 +27,15 @@ const MyItems = () => {
                 .then(data => {
                     if (data.message) {
                         toast.error(data.message, { id: 'not-authorized' })
+                        signOut(auth);
+                        navigate('/login')
                     } else {
                         setMyItems(data)
                     }
                 })
         }
         getMyItems();
-    }, [user]);
+    }, [navigate, user]);
     return (
         <MyReloadContext.Provider value={setMyItems}>
             <div className='container'>

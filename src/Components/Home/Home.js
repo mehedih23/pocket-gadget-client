@@ -3,6 +3,7 @@ import { Carousel } from 'react-bootstrap'
 import Helmet from 'react-helmet'
 import { useNavigate } from 'react-router-dom';
 import Products from '../Products/Products';
+import TopProducts from '../TopProducts/TopProducts';
 import Tracker from '../Tracker/Tracker';
 
 
@@ -92,7 +93,11 @@ const Home = () => {
                 <button onClick={() => navigate('/manage-inventories')} className='btn btn-outline-danger'>Manage Inventories</button>
             </div>
 
-            <div>
+            <div className='container my-4'>
+                <TopProducts></TopProducts>
+            </div>
+
+            <div className='container my-4'>
                 <Tracker></Tracker>
             </div>
         </>
