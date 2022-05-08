@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import toast from 'react-hot-toast';
 import auth from '../../firebase.init'
 import MyItem from '../MyItem/MyItem'
 
@@ -13,9 +14,20 @@ const MyItems = () => {
         const getMyItems = () => {
             const email = user.email;
             const url = `http://localhost:5000/myproducts?email=${email}`;
-            fetch(url, { email: email })
+            const token = localStorage.getItem('accessToken');
+            fetch(url, {
+                headers: {
+                    authorization: token
+                }
+            })
                 .then(response => response.json())
-                .then(data => setMyItems(data))
+                .then(data => {
+                    if (data.message) {
+                        toast.error(data.message, { id: 'not-authorized' })
+                    } else {
+                        setMyItems(data)
+                    }
+                })
         }
         getMyItems();
     }, [user]);
