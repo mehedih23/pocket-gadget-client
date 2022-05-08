@@ -9,13 +9,14 @@ import auth from '../../firebase.init';
 const AddItem = () => {
     const navigate = useNavigate();
     const [user, loading, error] = useAuthState(auth);
-
+    // loading //
     if (loading) {
         return <div className='vh-100 d-flex justify-content-center align-items-center'>
             <ClipLoader loading={loading} size={150} />
         </div>
     }
 
+    // error //
     if (error) {
         toast.error(error.message, { id: 'add-error' });
     }
@@ -83,9 +84,6 @@ const AddItem = () => {
                     <Form.Label>Item Description</Form.Label>
                     <Form.Control as="textarea" name='description' rows={3} required />
                 </Form.Group>
-                {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group> */}
                 <div className='col-lg-8 col-md-8 col-12 mx-auto'>
                     <Button variant="primary" type="submit">
                         Add

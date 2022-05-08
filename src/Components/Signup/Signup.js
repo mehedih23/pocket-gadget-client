@@ -19,6 +19,7 @@ const Signup = () => {
         setName(e.target.value);
     }
 
+    // Create user with email and password //
     const [
         createUserWithEmailAndPassword,
         newUser,
@@ -68,7 +69,7 @@ const Signup = () => {
     }
 
 
-
+    // sign in //
     const handleSignUp = (e) => {
         e.preventDefault();
         const email = e.target.email.value;

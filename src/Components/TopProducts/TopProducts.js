@@ -3,14 +3,15 @@ import { Table } from 'react-bootstrap'
 import './TopProducts.css'
 
 const TopProducts = () => {
+    // get products from database //
     const [topProducts, setTopProducts] = useState([])
     useEffect(() => {
         const url = 'https://pocket-gadget.herokuapp.com/top-products';
         fetch(url)
             .then(response => response.json())
             .then(data => setTopProducts(data))
-    }, [])
-    console.log(topProducts);
+    }, []);
+
     return (
         <div>
             <h2 className='my-4 text-center'>Products Of The <span style={{ 'color': 'rgb(180, 22, 27)' }}>Year</span></h2>

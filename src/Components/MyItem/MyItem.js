@@ -5,6 +5,7 @@ import { MyReloadContext } from '../MyItems/MyItems';
 const MyItem = ({ item }) => {
     const { _id, name, image, price, quantity, company, description, email } = item;
 
+    // Using context reload page //
     const reload = useContext(MyReloadContext);
     const handleReload = () => {
         const url = `https://pocket-gadget.herokuapp.com/myproducts?email=${email}`;

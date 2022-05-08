@@ -9,7 +9,8 @@ import Tracker from '../Tracker/Tracker';
 
 
 const Home = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    // set the product to the inventory //
     const [products, setProducts] = useState([]);
     useEffect(() => {
         const url = 'https://pocket-gadget.herokuapp.com/products'

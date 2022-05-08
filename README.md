@@ -1,6 +1,6 @@
 # Welcome To Pocket Gadget
 
-Live Sites [firebase](https://pocket-gadget.web.app/).
+Live Sites [Firebase](https://pocket-gadget.web.app/).
 
 ## Available Features
 

@@ -10,6 +10,7 @@ const ProductDetails = () => {
     const { image, name, price, description, quantity, company } = product;
     const { id } = useParams();
 
+    // Function for reload page //
     const handleReload = () => {
         fetch(`https://pocket-gadget.herokuapp.com/product/${id}`)
             .then(response => response.json())
@@ -18,13 +19,14 @@ const ProductDetails = () => {
             })
     }
 
+    // Get product with id //
     useEffect(() => {
         fetch(`https://pocket-gadget.herokuapp.com/product/${id}`)
             .then(response => response.json())
             .then(data => setProduct(data))
     }, [id]);
 
-
+    // Update product info //
     const handleUpdate = () => {
         if (quantity > 0) {
             let count = quantity - 1;
@@ -46,6 +48,7 @@ const ProductDetails = () => {
         }
     }
 
+    // Restock items quantity //
     const handleIncrease = (e) => {
         e.preventDefault();
         const count = e.target.count.value;

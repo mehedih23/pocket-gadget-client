@@ -6,6 +6,7 @@ import { Link, useLocation } from 'react-router-dom'
 import auth from '../../firebase.init';
 
 const NavBar = () => {
+    // pathname for hide & sick navbar //
     const { pathname } = useLocation();
     const [user] = useAuthState(auth);
     return (

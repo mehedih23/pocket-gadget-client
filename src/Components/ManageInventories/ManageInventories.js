@@ -7,6 +7,8 @@ export const ReloadContext = createContext();
 
 const ManageInventories = () => {
     const navigate = useNavigate();
+
+    // set all products to the state //
     const [allProducts, setAllProducts] = useState([]);
     useEffect(() => {
         const url = 'https://pocket-gadget.herokuapp.com/allproducts'

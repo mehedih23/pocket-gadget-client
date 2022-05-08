@@ -11,11 +11,13 @@ const ResetPass = () => {
     const [email, setEmail] = useState('');
     const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(auth);
 
-
+    // error //
     if (error) {
         toast.error(error.message, { id: 'reset-error' });
         return navigate('/')
     }
+
+    // loading //
     if (sending) {
         return <div className='vh-100 d-flex justify-content-center align-items-center'>
             <ClipLoader style={{ color: '#dc3545' }} loading={sending} size={150} />

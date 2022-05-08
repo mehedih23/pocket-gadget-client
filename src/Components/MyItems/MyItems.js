@@ -13,6 +13,8 @@ const MyItems = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth)
     const [myItems, setMyItems] = useState([]);
+
+    // useEffect for get items //
     useEffect(() => {
         const getMyItems = () => {
             const email = user.email;

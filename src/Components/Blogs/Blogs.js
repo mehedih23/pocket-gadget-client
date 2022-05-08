@@ -11,9 +11,6 @@ const Blogs = () => {
                 <h5>NodeJS</h5>
                 <p>Nodejs is written in C, C++ and Javascript. NodeJS is a Javascript runtime environment. We can run Javascript outside the browser with the help of NodeJS. NodeJS is mostly used in the server side, for development in server side. V8 engine is the javascript engine, and NodeJS use it to parse and runs Javascript.</p>
             </div>
-            {/*  <div className='my-3'>
-                <h3>When should you use nodejs and when should you use mongodb?</h3>
-            </div> */}
             <div className='my-3'>
                 <h3>2. Differences between sql and nosql databases?</h3>
                 <h5>SQL</h5>

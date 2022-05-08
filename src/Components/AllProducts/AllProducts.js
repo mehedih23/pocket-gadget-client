@@ -5,6 +5,7 @@ import { ReloadContext } from '../ManageInventories/ManageInventories';
 const AllProducts = ({ allProducts }) => {
     const { _id, name, image, price, quantity, company, description } = allProducts;
 
+    // context for reload //
     const reload = useContext(ReloadContext);
     const handleReload = () => {
         fetch(`https://pocket-gadget.herokuapp.com/allproducts`)
@@ -12,6 +13,7 @@ const AllProducts = ({ allProducts }) => {
             .then(data => reload(data))
     }
 
+    // Delete Item //
     const handleDelete = () => {
         const url = `https://pocket-gadget.herokuapp.com/product/${_id}`;
         fetch(url, {
